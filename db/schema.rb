@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_094052) do
+ActiveRecord::Schema.define(version: 2020_06_29_194740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,23 +22,33 @@ ActiveRecord::Schema.define(version: 2020_06_29_094052) do
   end
 
   create_table "categories_compositions", force: :cascade do |t|
+    t.bigint "composition_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_categories_compositions_on_category_id"
+    t.index ["composition_id"], name: "index_categories_compositions_on_composition_id"
   end
 
   create_table "compositions", force: :cascade do |t|
     t.string "title"
-    t.text "description"
-    t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "models", force: :cascade do |t|
-    t.string "composition"
-    t.string "title"
-    t.text "description"
-    t.string "photo"
+  create_table "sections", force: :cascade do |t|
+    t.bigint "composition_id"
+    t.string "name"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["composition_id"], name: "index_sections_on_composition_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.bigint "composition_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["composition_id"], name: "index_tags_on_composition_id"
   end
 
 end

@@ -3,8 +3,7 @@ class CreateCompositions < ActiveRecord::Migration[6.0]
     create_table :compositions do |t|
       t.string :title
       t.text :description
-      t.string :photo
-      t.integer :category_id
+      t.text :photo
       t.timestamps
     end
   end
