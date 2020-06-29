@@ -4,7 +4,7 @@ class CreateCompositions < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :description
       t.string :photo
-
+      t.integer :category_id
       t.timestamps
     end
   end

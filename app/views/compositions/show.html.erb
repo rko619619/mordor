@@ -1,3 +1,7 @@
 <h1><%= @composition.title %></h1>
+
 <%= link_to 'Изменить', edit_composition_path(@composition) %>
+
+<%= link_to 'Удалить', composition_path(@composition), method: :delete, data: {confirm: "Вы уверены ?"} %>
+
 <p><%= @composition.description %></p>
