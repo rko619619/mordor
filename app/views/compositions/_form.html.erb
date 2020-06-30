@@ -1,25 +1,16 @@
 <%= form_for @composition do |f|%>
-  <div class="form-conrol">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :'Название' %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="form-conrol">
-    <%= f.label :photo %>
-    <%= f.text_field :photo %>
+  <div class="form-group">
+    <%= f.label :'Описание'%>
+    <%= f.text_field :description, class: 'form-control' %>
   </div>
 
-  <div class="form-conrol">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="form-group">
+  <%= f.submit 'Сохранить',class:'btn btn-primary'%>
+    <%= link_to 'Назад', :back, class:'btn btn-outline-secondary'%>
   </div>
-
-  <div class="form-conrol">
-    <%= f.label :Genre %>
-    <%= f.text_field :@category.name_of_category %>
-  </div>
-
-  <div class="form-conrol">
-  <%= f.submit 'Сохранить' %>
-</div>
 <% end %>

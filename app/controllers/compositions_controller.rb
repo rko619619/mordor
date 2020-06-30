@@ -3,21 +3,18 @@ class CompositionsController < ApplicationController
 
   def index
     @compositions = Composition.all
-    @category = Category.all
   end
 
   def show
   end
 
   def new
-    @category = Category.new
     @composition = Composition.new
   end
 
   def create
-    @category = Category.new(post_params)
     @composition = Composition.new(post_params)
-    if @composition.save and @category.save
+    if @composition.save
       redirect_to @composition
     else
       render :new
@@ -29,7 +26,7 @@ class CompositionsController < ApplicationController
   end
 
   def update
-    if @composition.update_attributes(post_params) and @category.update_attributes(post_params)
+    if @composition.update_attributes(post_params)
       redirect_to @composition
     else
       render :edit
@@ -37,7 +34,6 @@ class CompositionsController < ApplicationController
   end
 
   def destroy
-    @category.destroy
     @composition.destroy
     redirect_to compositions_path
   end
@@ -46,11 +42,9 @@ class CompositionsController < ApplicationController
 
   def post_params
     params.require(:composition).permit(:title, :photo, :description)
-    params.require(:category).permit(:name)
   end
 
   def set_composition_category
     @composition = Composition.find(params[:id])
-    @category = Category.find(params[:id])
   end
 end
