@@ -1,0 +1,16 @@
+<%= form_for @composition do |f|%>
+  <div class="form-group">
+    <%= f.label :'Название' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Описание'%>
+    <%= f.text_field :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+  <%= f.submit 'Сохранить',class:'btn btn-primary'%>
+    <%= link_to 'Назад', :back, class:'btn btn-outline-secondary'%>
+  </div>
+<% end %>

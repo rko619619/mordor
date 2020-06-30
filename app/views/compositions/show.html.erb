@@ -1,0 +1,16 @@
+<article class="composition">
+  <section class="composition-head">
+    <h1><%= @composition.title%></h1>
+    <small>
+      <time><%= @composition.created_at.to_date.strftime("%d %B, %Y")%></time>
+      |
+      <%= link_to 'Изменить', edit_composition_path(@composition)%>
+      |
+      <%= link_to 'Удалить', composition_path(@composition), method: :delete, data: {confirm: "Вы уверены ?"} %>
+    </small>
+  </section>
+
+  <section class="composition-body">
+    <%= @composition.description %>
+  </section>
+</article>
