@@ -13,7 +13,6 @@ class CompositionsController < ApplicationController
   end
 
   def create
-
     @composition = Composition.new(post_params)
     if @composition.save
       redirect_to @composition
