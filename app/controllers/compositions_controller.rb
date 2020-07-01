@@ -15,9 +15,9 @@ class CompositionsController < ApplicationController
   def create
     @composition = Composition.new(post_params)
     if @composition.save
-      redirect_to @composition
+      redirect_to @composition , success: 'Статья успешно создана'
     else
-      render :new
+      render :new , danger: 'Статья не создана'
     end
 
   end
@@ -27,15 +27,15 @@ class CompositionsController < ApplicationController
 
   def update
     if @composition.update_attributes(post_params)
-      redirect_to @composition
+      redirect_to @composition, info: 'Статься успешно обновлена'
     else
-      render :edit
+      render :edit, danger: 'Статья не обновлена'
     end
   end
 
   def destroy
     @composition.destroy
-    redirect_to compositions_path
+    redirect_to compositions_path, success: 'Статья успешна удалена'
   end
 
   private
