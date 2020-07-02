@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      composition: 'Статья'
+    attributes:
+      composition:
+        title: 'Название'
+        description: 'Описание'
+    errors:
+      messages:
+        blank: 'не может быть пустым'

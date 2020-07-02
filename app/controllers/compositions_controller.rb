@@ -15,11 +15,10 @@ class CompositionsController < ApplicationController
   def create
     @composition = Composition.new(post_params)
     if @composition.save
-      redirect_to @composition , success: 'Статья успешно создана'
+      redirect_to @composition , success: t('compositions.controller.post_created')
     else
-      render :new , danger: 'Статья не создана'
+      render :new , danger: t('compositions.controller.post_not_created')
     end
-
   end
 
   def edit
@@ -27,15 +26,15 @@ class CompositionsController < ApplicationController
 
   def update
     if @composition.update_attributes(post_params)
-      redirect_to @composition, info: 'Статься успешно обновлена'
+      redirect_to @composition, info: t('compositions.controller.post_update')
     else
-      render :edit, danger: 'Статья не обновлена'
+      render :edit, danger: t('compositions.controller.post_not_created')
     end
   end
 
   def destroy
     @composition.destroy
-    redirect_to compositions_path, success: 'Статья успешна удалена'
+    redirect_to compositions_path, success: t('compositions.controller.post_delete')
   end
 
   private

@@ -1,0 +1,28 @@
+ru:
+  application:
+    title: 'Статьи'
+    new: 'Новая статья'
+    search: 'Поиск'
+  common:
+    errors: 'При заполнении формы возникли ошибки'
+    back: 'Назад'
+    submit: 'Сохранить'
+    edit: 'Редактировать'
+    delete: 'Удалить'
+    sure: 'Вы уверены?'
+  compositions:
+    controller:
+      post_created: 'Статья успешно создана'
+      post_not_created: 'Статья не создана'
+      post_update: 'Статья успешно обновлена'
+      post_not_update: 'Статья не обновлена'
+      post_delete: 'Статья успешно удалена'
+    index:
+      title: 'Статьи'
+    new:
+      title: 'Новая статья'
+    edit:
+      title: 'Редактирование статьи'
+    form:
+      submit:
+        '%{action} статью'

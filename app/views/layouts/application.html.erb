@@ -22,14 +22,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<%=compositions_path%>">Статьи<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<%=compositions_path%>"><%= t('application.title') %><span class="sr-only">(current)</span></a>
         </li>
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <%= link_to 'Новая статья', new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
-        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+        <%= link_to t('application.new'), new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
+        <input class="form-control mr-sm-2" type="search" placeholder="<%= t('application.search')%>" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t('application.search') %></button>
       </form>
     </div>
   </nav>
