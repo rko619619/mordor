@@ -25,7 +25,7 @@ class CompositionsController < ApplicationController
   end
 
   def update
-    if @composition.update_attributes(post_params)
+    if @composition.update(post_params)
       redirect_to @composition, info: t('compositions.controller.post_update')
     else
       render :edit, danger: t('compositions.controller.post_not_created')
@@ -40,7 +40,7 @@ class CompositionsController < ApplicationController
   private
 
   def post_params
-    params.require(:composition).permit(:title, :photo, :description)
+    params.require(:composition).permit(:title, :description, :images)
 
   end
 
