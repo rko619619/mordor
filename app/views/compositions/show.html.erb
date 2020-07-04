@@ -11,6 +11,8 @@
   </section>
 
   <section class="composition-body">
+
+    <%= image_tag @composition.images.url(:large), class: 'img-show' if @composition.images?  %>
     <%= @composition.description %>
   </section>
 </article>

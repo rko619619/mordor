@@ -15,7 +15,7 @@ gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'popper_js', '~> 1.14.5'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave'
 gem "mini_magick"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'

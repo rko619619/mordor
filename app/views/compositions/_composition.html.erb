@@ -9,7 +9,9 @@
           <%= link_to t('common.delete'), composition_path(composition), method: :delete, data: {confirm: t('common.sure')} %>
         </small>
     </section>
-    <section class="composition-description">
+    <section class="composition-description clearfix">
+      <%= image_tag composition.images.url( :thumb), class: 'img-thumbnail thumb' if composition.images? %>
       <%= composition.description %>
+
     </section>
   </article>
