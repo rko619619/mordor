@@ -243,7 +243,7 @@ DEPENDENCIES
   bootstrap (~> 4.5.0)
   byebug
   capybara (>= 2.15)
-  carrierwave (~> 2.0)
+  carrierwave
   jbuilder (~> 2.7)
   jquery-rails
   mini_magick
