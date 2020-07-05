@@ -1,5 +1,6 @@
   <article class="composition">
     <section class="composition-head">
+
       <h2><%= link_to composition.title, composition_path(composition)%></h2>
         <small>
            <time><%= composition.created_at.to_date.strftime("%d %B, %Y")%></time>
