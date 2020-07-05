@@ -27,6 +27,7 @@ gem 'annotate' , '>= 3.1.1'
 gem 'pry'
 gem 'aws-sdk', '>= 3.0.0'
 gem 'paperclip', '>= 6.0.0'
+gem 'pg', '>= 0.18', '< 2.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -50,7 +51,6 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'pg', '>= 0.18', '< 2.0'
 end
 
 group :test do
