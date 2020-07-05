@@ -40,3 +40,4 @@ yarn-debug.log*
 /public/uploads/tmp/*
 
 /public/uploads/composition/
+!/public/uploads/composition/
