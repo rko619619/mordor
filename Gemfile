@@ -13,6 +13,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails','~> 4.4.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+gem 'aws-sdk-s3', '~> 1.73'
 gem 'popper_js', '>= 1.14.5'
 gem 'carrierwave', '>= 2.0'
 gem "mini_magick", '>= 4.10.0'
