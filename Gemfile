@@ -13,7 +13,6 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails','~> 4.4.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'popper_js', '>= 1.14.5'
 gem 'carrierwave', '>= 2.0'
 gem "mini_magick", '>= 4.10.0'
@@ -26,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'rspec','>= 3.9.0'
 gem 'annotate' , '>= 3.1.1'
 gem 'pry'
+gem "aws-sdk-s3", require: false
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
