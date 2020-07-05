@@ -25,7 +25,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'rspec','>= 3.9.0'
 gem 'annotate' , '>= 3.1.1'
 gem 'pry'
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk', '>= 3.0.0'
+gem 'paperclip', '>= 6.0.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
