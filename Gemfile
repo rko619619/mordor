@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.10'
 gem 'bootstrap', '~> 4.5.0'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
