@@ -268,6 +268,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave (~> 2.0)
   fog-aws (~> 3.6, >= 3.6.6)
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jquery-rails
   mini_magick (~> 4.10)
