@@ -6,6 +6,7 @@ ru:
       composition:
         title: 'Название'
         description: 'Описание'
+        body: 'Текст'
     errors:
       messages:
         blank: 'не может быть пустым'
