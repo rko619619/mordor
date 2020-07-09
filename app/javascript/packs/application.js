@@ -20,3 +20,6 @@ require("channels")
 //= require bootstrap-sprockets
 //= require_tree
 //= require turbolinks
+
+require("trix")
+require("@rails/actiontext")
