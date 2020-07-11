@@ -12,6 +12,9 @@
     <section class="composition-description clearfix">
       <%= image_tag composition.image.url(:thumb), class:'img-thumnail thumb' if composition.image? %>
       <%= composition.description %>
+    </section>
 
+    <section class="footer-summary">
+      <%= raw composition.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'badge badge-primary' }.join(' ') %>
     </section>
   </article>

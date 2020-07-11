@@ -7,6 +7,7 @@ ru:
         title: 'Название'
         description: 'Описание'
         body: 'Текст'
+        all_tags: 'Теги'
     errors:
       messages:
         blank: 'не может быть пустым'
