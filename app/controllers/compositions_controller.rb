@@ -40,7 +40,7 @@ class CompositionsController < ApplicationController
   private
 
   def post_params
-    params.require(:composition).permit(:title, :description, :image, :content)
+    params.require(:composition).permit(:title, :description, :image, :content, :all_tags)
 
   end
 
