@@ -26,3 +26,5 @@ ru:
     form:
       submit:
         '%{action} статью'
+  tags:
+    no_posts: 'Статей нет'
