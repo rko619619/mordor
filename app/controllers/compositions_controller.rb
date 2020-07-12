@@ -6,6 +6,8 @@ class CompositionsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @composition.comments.order("created_at DESC")
   end
 
   def new

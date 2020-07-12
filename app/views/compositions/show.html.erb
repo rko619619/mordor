@@ -1,4 +1,4 @@
-<article class="composition">
+<div class="composition">
   <section class="composition-head">
     <h1><%= @composition.title%></h1>
     <small>
@@ -12,7 +12,33 @@
 
   <section class="composition-body">
     <%= image_tag @composition.image.url(:large), class: 'image-show' if @composition.image? %>
-    <%= @composition.description %>
+    <h4><%= t("compositions.show.descript") %></h4>
+    <div class="description"><%= @composition.description %></div>
+    <h4><%= t('compositions.show.text') %></h4>
     <%= @composition.content %>
+
   </section>
-</article>
+
+  <section class="comments">
+    <h4><%= t('comments.panel') %></h4>
+    <div class="com">
+      <div id="comment_pane">
+        <% @comments.reverse_each do |comment| %>
+        <%= render 'comments/comment', comment: comment %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="composition-comments">
+    <h4><%= t('comments.panel') %></h4>
+    <%= form_with model: [@composition, @comment] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :body, class: "form-control" %>
+        <%= f.submit t('comments.coment'),class:'btn btn-primary'%>
+      </div>
+    <% end %>
+  </section>
+
+</div>

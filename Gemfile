@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'rspec'
 gem 'annotate'
 gem 'pry'
+gem 'devise', '~> 4.7', '>= 4.7.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
