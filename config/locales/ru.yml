@@ -34,7 +34,6 @@ ru:
   comments:
     panel: "Коментарии"
     coment: "Опубликовать"
-
   devise:
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.

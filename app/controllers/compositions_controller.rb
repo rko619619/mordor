@@ -43,7 +43,6 @@ class CompositionsController < ApplicationController
 
   def post_params
     params.require(:composition).permit(:title, :description, :image, :content, :all_tags)
-
   end
 
   def set_composition_category

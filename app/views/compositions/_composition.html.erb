@@ -10,7 +10,7 @@
         <small>
            <time><%= composition.created_at.to_date.strftime("%d %B, %Y")%></time>
           |
-          <%= link_to t('common.edit'), edit_composition_path(composition)%>
+          <%= link_to  edit_composition_path(composition)%>
           |
           <%= link_to t('common.delete'), composition_path(composition), method: :delete, data: {confirm: t('common.sure')} %>
           |
