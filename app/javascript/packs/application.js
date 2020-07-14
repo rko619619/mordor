@@ -21,6 +21,12 @@ require("channels")
 //= require bootstrap-sprockets
 //= require_tree
 //= require turbolinks
-
+//= require jquery
 require("trix")
 require("@rails/actiontext")
+
+$(document).on('turbolinks:load', function(){
+
+
+    console.log('yiha, we are ready!')
+})

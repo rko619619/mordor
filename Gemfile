@@ -15,6 +15,7 @@ gem 'mini_magick', '~> 4.10'
 gem 'bootstrap', '~> 4.5.0'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
+gem 'redis', '~> 4.2', '>= 4.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'popper_js', '~> 1.14.5'

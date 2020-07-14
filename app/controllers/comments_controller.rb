@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   before_action :set_composition
   before_action :authenticate_user!
+  def index
+    @comments = Comment.all
+  end
 
   def create
     @comment = @composition.comments.new(comment_params)

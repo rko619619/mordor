@@ -33,7 +33,7 @@
 
     <section class="composition-comments">
       <h4><%= t('comments.panel') %></h4>
-      <%= form_with model: [@composition, @comment] do |f| %>
+      <%= form_with model: [@composition, @comment], remote: true do |f| %>
         <div class="form-group">
           <%= f.text_area :body, class: "form-control" %>
           <%= f.submit t('comments.coment'),class:'btn btn-primary'%>

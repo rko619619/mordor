@@ -21,6 +21,7 @@ class CompositionsController < ApplicationController
     else
       render :new , danger: t('compositions.controller.post_not_created')
     end
+
   end
 
   def edit
