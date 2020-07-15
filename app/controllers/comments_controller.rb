@@ -6,6 +6,10 @@ class CommentsController < ApplicationController
     @comment = @composition.comments.new(comment_params)
     @comment.user = current_user
     @comment.save
+
+    SendCommentJob.perform_later(@comment)
+
+
   end
 
   def destroy

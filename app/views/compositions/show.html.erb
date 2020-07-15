@@ -23,7 +23,7 @@
     <section class="comments">
       <div class="com">
         <div id="comment_pane">
-          <% @comments.reverse_each do |comment| %>
+          <% @comments.each do |comment| %>
           <%= render 'comments/comment', comment: comment %>
           <% end %>
         </div>
@@ -36,7 +36,7 @@
       <%= form_with model: [@composition, @comment] do |f| %>
         <div class="form-group">
           <%= f.text_area :body, class: "form-control" %>
-          <%= f.submit t('comments.coment'),class:'btn btn-primary'%>
+          <%= f.submit t('comments.coment'),class:'btn btn-primary', id: 'chat-btn'%>
         </div>
       <% end %>
     </section>
