@@ -1,0 +1,10 @@
+<%= render 'shared/breadcrumb', category: @category %>
+
+<h1><%= @category.name %></h1>
+
+
+<section id="compositions">
+  <%= render @compositions %>
+</section>
+
+<%= will_paginate @compositions, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>

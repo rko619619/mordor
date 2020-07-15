@@ -1,9 +1,9 @@
 <div class="submenu">
   <h2>Категории</h2>
-  <ul class="nav nav-pills nav-stacked">
+  <ul class="nav list-group">
     <% Category.roots.each do |category| %>
-      <li class="nav-item">
-          <%= link_to category.name, category, class: "nav-link #{'active' if current_page?(category_path(category))}" %>
+      <li >
+          <%= link_to category.name, category, class: "nav-link list-group-item #{'active' if current_page?(category_path(category)) || @composition.present? && @composition.category == category}" %>
           <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %>
       </li>
      <% end %>
