@@ -20,7 +20,8 @@ class CompositionsController < ApplicationController
     if @composition.save
       redirect_to @composition , success: t('compositions.controller.post_created')
     else
-      render :new , danger: t('compositions.controller.post_not_created')
+      flash.now[:danger] = t('compositions.controller.post_not_created')
+      render :new
     end
   end
 
@@ -31,7 +32,8 @@ class CompositionsController < ApplicationController
     if @composition.update(post_params)
       redirect_to @composition, info: t('compositions.controller.post_update')
     else
-      render :edit, danger: t('compositions.controller.post_not_created')
+      flash.now[:danger] = t('compositions.controller.post_not_created')
+      render :edit
     end
   end
 
@@ -43,7 +45,7 @@ class CompositionsController < ApplicationController
   private
 
   def post_params
-    params.require(:composition).permit(:title, :description, :image, :content, :all_tags)
+    params.require(:composition).permit(:title, :description, :image, :content, :all_tags, :category_id)
   end
 
   def set_composition_category

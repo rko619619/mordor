@@ -29,6 +29,7 @@ gem 'annotate'
 gem 'pry'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'will_paginate', '~> 3.3'
+gem 'ancestry', '~> 2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

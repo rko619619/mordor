@@ -1,13 +1,14 @@
 class Composition < ApplicationRecord
   has_rich_text :content
   mount_uploader :image, ImageUploader
-  has_and_belongs_to_many :categories
-  has_many :sections
 
   has_many :comments, dependent: :destroy
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+
+  belongs_to :category
+
 
   def all_tags
     self.tags.map(&:name).join(',')
