@@ -4,7 +4,9 @@ class Composition < ApplicationRecord
   has_and_belongs_to_many :categories
   has_many :sections
 
-  has_many :taggings
+  has_many :comments, dependent: :destroy
+
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   def all_tags
@@ -16,6 +18,6 @@ class Composition < ApplicationRecord
       Tag.where(name: name.strip).first_or_create!
     end
   end
-  validates :title, :description, presence: true
+  validates :title, :description, :content, presence: true
 
 end
