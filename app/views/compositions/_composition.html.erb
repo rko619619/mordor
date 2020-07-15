@@ -8,7 +8,11 @@
     <section class="composition-head">
       <h2><%= link_to composition.title, composition_path(composition)%></h2>
         <small>
-           <time><%= composition.created_at.to_date.strftime("%d %B, %Y")%></time>
+          <time><%= composition.created_at.to_date.strftime("%d %B, %Y")%></time>
+          <% if composition.category.present?%>
+          |
+          <%= link_to composition.category.name, composition.category%>
+          <% end %>
           |
           <%= link_to t('common.edit'), edit_composition_path(composition)%>
           |

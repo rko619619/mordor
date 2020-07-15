@@ -1,8 +1,14 @@
+<%= render 'shared/breadcrumb', category: @composition.category %>
+
 <div class="composition">
   <section class="composition-head">
     <h1><%= @composition.title%></h1>
     <small>
       <time><%= @composition.created_at.to_date.strftime("%d %B, %Y")%></time>
+      <% if @composition.category.present?%>
+        |
+        <%= link_to @composition.category.name, @composition.category%>
+      <% end %>
       |
       <%= link_to t('common.edit') , edit_composition_path(@composition)%>
       |

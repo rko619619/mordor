@@ -1,3 +1,7 @@
 class Category < ApplicationRecord
-  has_and_belongs_to_many :compositions
+  has_many :compositions
+
+  validates :name, presence: true
+
+  has_ancestry
 end
