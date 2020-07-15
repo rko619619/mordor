@@ -3,6 +3,7 @@ class CompositionsController < ApplicationController
 
   def index
     @compositions = Composition.all
+    @compositions = Composition.paginate(page: params[:page],per_page: 8)
   end
 
   def show
