@@ -60,19 +60,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "mordor_production"
 
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.smtp_settings =
-      {
-
-          :address            => 'smtp.gmail.com',
-          :port               => 587,
-          :domain             => 'gmail.com', #you can also use google.com
-          :authentication     => :plain,
-          :user_name          => 'thrasherdota2@gmail.com',
-          :password           => 'dendixvost'
-      }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'smtp.gmail.com',
+      :user_name => "thrasherdota2@gmail.com",
+      :password => "dendixvost",
+      :authentication => :login,
+      :enable_starttls_auto => true
+  }
   config.action_mailer.default_url_options = { host: 'mordorwin.herokuapp.com'  }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
