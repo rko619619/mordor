@@ -73,7 +73,7 @@ Rails.application.configure do
           :user_name          => 'thrasherdota2@gmail.com',
           :password           => 'dendixvost'
       }
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: 'mordorwin.herokuapp.com'  }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
