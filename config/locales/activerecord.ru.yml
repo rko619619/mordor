@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       composition: 'Статья'
+
     attributes:
       composition:
         title: 'Название'
@@ -12,5 +13,16 @@ ru:
         name: 'Название'
         parent_id: 'Категория родитель'
     errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: 'не совпадают'
+            password:
+              too_short: 'короткий'
+            email:
+              taken: 'уже используется'
       messages:
         blank: 'не может быть пустым'
+
+

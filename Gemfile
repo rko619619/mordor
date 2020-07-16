@@ -30,6 +30,7 @@ gem 'pry'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'will_paginate', '~> 3.3'
 gem 'ancestry', '~> 2.1'
+gem 'devise_token_auth', '~> 1.1', '>= 1.1.4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -51,6 +52,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'letter_opener', '~> 1.7'
 end
 
 group :test do
