@@ -1,0 +1,28 @@
+en:
+  activerecord:
+    models:
+      composition: 'Post'
+
+    attributes:
+      composition:
+        title: 'Title'
+        description: 'Description'
+        body: 'Text'
+        all_tags: 'tags'
+      category:
+        name: 'Title'
+        parent_id: 'Parent category'
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: 'не совпадают'
+            password:
+              too_short: 'not confirm'
+            email:
+              taken: 'already used'
+      messages:
+        blank: 'do not a blank'
+
+
