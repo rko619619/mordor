@@ -32,16 +32,17 @@ ru:
     show:
       text: 'Содержание:'
       descript: 'Описание:'
-  categories:
-    index:
-      title: 'Категории'
-    new:
-      title: 'Новая категория'
-    edit:
-      title: 'Редактирование категории'
-    form:
-      submit:
-          '%{action} категорию'
+  admin:
+    categories:
+      index:
+        title: 'Категории'
+      new:
+        title: 'Новая категория'
+      edit:
+        title: 'Редактирование категории'
+      form:
+        submit:
+            '%{action} категорию'
 
   tags:
     no_posts: 'Статей нет'
