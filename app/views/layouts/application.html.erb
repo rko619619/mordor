@@ -33,7 +33,9 @@
       </ul>
 
       <% if user_signed_in? %>
+
         <form class="form-inline my-2 my-lg-0">
+          <%= link_to 'Create Profile', new_profile_path, class: 'btn btn-outline-primary pull-xs-right' %>
           <%= link_to t('application.new'), new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
       <% end %>
         <input class="form-control mr-sm-2 pull-xs-right " type="search" placeholder="<%= t('application.search')%>" aria-label="Search">
