@@ -1,0 +1,34 @@
+<% if current_user.compositions.present? %>
+  <article class="composition">
+    <section class="composition-head">
+      <h2><%= link_to user.composition.title, composition_path(composition)%></h2>
+      <small>
+        <time><%= user.composition.created_at.to_date.strftime("%d %B, %Y")%></time>
+        <% if composition.category.present?%>
+          |
+          <%= link_to user.composition.category.name, composition.category%>
+        <% end %>
+        <% if user_signed_in?%>
+          |
+          <%= link_to t('common.edit'), edit_composition_path(composition)%>
+          |
+          <%= link_to t('common.delete'), composition_path(composition), method: :delete, data: {confirm: t('common.sure')} %>
+        <% end %>
+        |
+        <%= pluralize(user.composition.comments.count, "comment") %>
+
+      </small>
+    </section>
+    <section class="composition-description clearfix">
+      <%= image_tag user.composition.image.url(:thumb), class:'img-thumnail thumb' if user.composition.image? %>
+      <%= user.composition.description %>
+    </section>
+
+    <section class="footer-summary">
+      <%= raw composition.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'badge badge-primary' }.join(' ') %>
+    </section>
+  </article>
+
+<% else %>
+  <h1>You don't have any posts yet! create one</h1>
+<% end %>

@@ -18,6 +18,7 @@ class CompositionsController < ApplicationController
 
   def create
     @composition = Composition.new(post_params)
+    @composition.user_id = current_user.id
     if @composition.save
       redirect_to @composition , success: t('compositions.controller.post_created')
     else
