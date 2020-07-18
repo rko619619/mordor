@@ -31,12 +31,6 @@ class CompositionsController < ApplicationController
   end
 
   def update
-    if @composition.update(post_params)
-      redirect_to @composition, info: t('compositions.controller.post_update')
-    else
-      flash.now[:danger] = t('compositions.controller.post_not_created')
-      render :edit
-    end
   end
 
   def destroy
@@ -47,7 +41,7 @@ class CompositionsController < ApplicationController
   private
 
   def post_params
-    params.require(:composition).permit(:title, :description, :image, :content, :all_tags, :category_id)
+    params.require(:composition).permit(:title, :description, :image, :content, :all_tags, :category_id, :user_id)
   end
 
   def set_composition_category

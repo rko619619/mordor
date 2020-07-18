@@ -9,11 +9,10 @@ Rails.application.routes.draw do
     end
 
     resources  :users do
-      resources :compositions, only: [:index]
+      resource :compositions
     end
 
     resources :tags, only: [:show]
     resources :categories
-
   end
 end
