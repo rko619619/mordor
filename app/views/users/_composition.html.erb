@@ -7,7 +7,7 @@
           |
           <%= link_to composition.category.name, composition.category%>
           <% end %>
-          <% if user_signed_in?%>
+          <% if user_signed_in? and current_user.id == composition.user_id%>
             |
             <%= link_to t('common.edit'), user_compositions_path_composition_path(composition)%>
             |

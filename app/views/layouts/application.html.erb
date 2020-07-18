@@ -25,17 +25,19 @@
         <li class="nav-item active">
           <a class="nav-link" href="<%=compositions_path%>"><%= t('application.title') %><span class="sr-only">(current)</span></a>
         </li>
-        <li>
-          <a class="nav-link" href="<%= users_path%>"><%= "Мои статьи" %><span class="sr-only">(current)</span></a>
-        </li>
+        <% if user_signed_in? %>
+          <li>
+            <a class="nav-link" href="<%= users_path%>"><%= "Мои статьи" %><span class="sr-only">(current)</span></a>
+          </li>
+        <% end %>
       </ul>
 
       <% if user_signed_in? %>
         <form class="form-inline my-2 my-lg-0">
           <%= link_to t('application.new'), new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
       <% end %>
-        <input class="form-control mr-sm-2" type="search" placeholder="<%= t('application.search')%>" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%=  t('application.search') %></button>
+        <input class="form-control mr-sm-2 pull-xs-right " type="search" placeholder="<%= t('application.search')%>" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 pull-xs-right" type="submit"><%=  t('application.search') %></button>
         </form>
 
 

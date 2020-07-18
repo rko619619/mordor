@@ -31,11 +31,14 @@ class CompositionsController < ApplicationController
   end
 
   def update
+
   end
 
   def destroy
-    @composition.destroy
-    redirect_to compositions_path, success: t('compositions.controller.post_delete')
+    if current_user.id == @composition.user_id
+      @composition.destroy
+      redirect_to compositions_path, success: t('compositions.controller.post_delete')
+    end
   end
 
   private
