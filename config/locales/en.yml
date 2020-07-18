@@ -3,6 +3,8 @@ en:
     title: 'Posts'
     new: 'New post'
     search: 'Search'
+    create: 'Create'
+    edit: 'Edit'
   common:
     errors: 'You have errors'
     back: 'Back'
@@ -53,7 +55,7 @@ en:
     log_out: 'Log out'
     log_in: 'Log in'
     password: 'Password'
-    save: 'Rememver'
+    save: 'Remember'
     sign: 'Registration'
     forgot: 'Forgot your password?'
     registr: 'Registration'
