@@ -8,7 +8,7 @@ en:
         title: 'Title'
         description: 'Description'
         body: 'Text'
-        all_tags: 'tags'
+        all_tags: 'Tags'
       category:
         name: 'Title'
         parent_id: 'Parent category'
