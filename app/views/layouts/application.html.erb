@@ -76,18 +76,14 @@
       <div class="col-md-9">
         <%= yield %>
       </div>
-      <% if  composition.category.present?%>
         <div class="col-md-3">
           <%= render 'shared/submenu' %>
-      <% end %>
-      <% if  composition.category.present? %>
         <div class="tag-cloud">
           <h2><%= t('activerecord.attributes.composition.all_tags') %></h2>
           <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
             <%= link_to tag.name, tag_path(tag.name), class: css_class %>
           <% end %>
         </div>
-      <% end %>
       </div>
     </div>
   </div>
