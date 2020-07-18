@@ -2,7 +2,6 @@ ru:
   activerecord:
     models:
       composition: 'Статья'
-
     attributes:
       composition:
         title: 'Название'

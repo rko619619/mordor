@@ -1,7 +1,7 @@
 <h1><%= t('.title') %></h1>
 
 <div class="buttons_panel">
-  <%= link_to 'Новая категория', new_category_path, class: 'btn btn-outline-primary btn-sm'%>
+  <%= link_to t('categories.new.title'), new_category_path, class: 'btn btn-outline-primary btn-sm'%>
 </div>
 
 <section id="categories">
@@ -9,8 +9,8 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>Название</th>
-      <th>Категория родитель</th>
+      <th><%= t('categories.new.title') %></th>
+      <th><%= t('activerecord.attributes.category.parent_id') %></th>
       <th></th>
     </tr>
     </thead>
@@ -21,8 +21,8 @@
       <td><%= category.name %></td>
       <td><%= category.parent.name if category.parent.present? %></td>
       <td>
-        <%= link_to 'Изменить', edit_category_path(category), class: 'btn btn-outline-primary btn-sm'%>
-        <%= link_to 'Удалить', category_path(category), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-outline-danger btn-sm'%>
+        <%= link_to t('common.edit'), edit_category_path(category), class: 'btn btn-outline-primary btn-sm'%>
+        <%= link_to t('common.delete'), category_path(category), method: :delete, data: {confirm: t('common.sure')}, class: 'btn btn-outline-danger btn-sm'%>
       </td>
     </tr>
     <% end %>

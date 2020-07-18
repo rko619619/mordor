@@ -1,33 +1,74 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  application:
+    title: 'Posts'
+    new: 'New post'
+    search: 'Search'
+  common:
+    errors: 'You have errors'
+    back: 'Back'
+    submit: 'Save'
+    edit: 'Edit'
+    delete: 'Delete'
+    sure: 'Are you sure?'
+  will_paginate:
+    previous_label: '&larr; Previous'
+    next_label: 'Next &rarr;'
+  compositions:
+    controller:
+      post_created: 'Post was successfully created'
+      post_not_created: 'Post was not created'
+      post_update: 'Post was successfully updated'
+      post_not_update: 'Post was not update'
+      post_delete: 'Post was successfully delete'
+    index:
+      title: 'Posts'
+    new:
+      title: 'New post'
+    edit:
+      title: 'Edit Post'
+    form:
+      submit:
+        '%{action} post'
+    show:
+      text: 'Content:'
+      descript: 'Description:'
+  categories:
+    index:
+      title: 'Category'
+    new:
+      title: 'New category'
+    edit:
+      title: 'Edit category'
+    form:
+      submit:
+        '%{action} category'
+
+  tags:
+    no_posts: 'No posts'
+  comments:
+    panel: "Comments"
+    coment: "Publish"
+  devise:
+    log: 'Log'
+    log_out: 'Log out'
+    log_in: 'Log in'
+    password: 'Password'
+    save: 'Rememver'
+    sign: 'Registration'
+    forgot: 'Forgot your password?'
+    registr: 'Registration'
+    confirmation_inst: 'Did not get the letter?'
+    change_password: 'Change your password'
+    change_password_btn: 'Change password'
+    new_password: 'New password'
+    confirm: 'Confirm passsword'
+    edit: 'Edit'
+    leave: '(leave it blank if you do not want to change something)'
+    chapte: 'minimum characters'
+    current_password: 'Current password'
+    current_password_confirm: '(you need your current password to confirm changes)'
+    cancel: 'Cancel account'
+    update: 'Update'
+    cancel_acc: 'Cancel my account'
+    resend: 'Send a letter to confirm'
+    res: 'Send a letter'
