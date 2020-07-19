@@ -9,7 +9,7 @@
         |
         <%= link_to @composition.category.name, @composition.category%>
       <% end %>
-      <% if user_signed_in?%>
+      <% if user_signed_in? and current_user.id == @composition.user_id%>
         |
         <%= link_to t('common.edit') , edit_composition_path(@composition)%>
         |
@@ -28,27 +28,27 @@
   </section>
 
 
-    <section class="comments">
-      <div class="com">
-        <div id="comment_pane">
-          <% @comments.reverse_each do |comment| %>
+  <section class="comments">
+    <div class="com">
+      <div id="comment_pane">
+        <% @comments.reverse_each do |comment| %>
           <%= render 'comments/comment', comment: comment %>
-          <% end %>
-        </div>
-      </div>
-    </section>
-
-    <% if user_signed_in?%>
-      <section class="composition-comments">
-        <h4><%= t('comments.panel') %></h4>
-        <%= form_with model: [@composition, @comment] do |f| %>
-          <div class="form-group">
-            <%= f.text_area :body, class: "form-control" %>
-            <%= f.submit t('comments.coment'),class:'btn btn-primary'%>
-          </div>
         <% end %>
-      </section>
-     <%end %>
+      </div>
+    </div>
+  </section>
+
+  <% if user_signed_in?%>
+    <section class="composition-comments">
+      <h4><%= t('comments.panel') %></h4>
+      <%= form_with model: [@composition, @comment] do |f| %>
+        <div class="form-group">
+          <%= f.text_area :body, class: "form-control" %>
+          <%= f.submit t('comments.coment'),class:'btn btn-primary'%>
+        </div>
+      <% end %>
+    </section>
+  <%end %>
 
 
 </div>

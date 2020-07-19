@@ -9,6 +9,8 @@ class Composition < ApplicationRecord
 
   belongs_to :category
 
+  belongs_to :user, dependent: :destroy
+
 
   def all_tags
     self.tags.map(&:name).join(',')

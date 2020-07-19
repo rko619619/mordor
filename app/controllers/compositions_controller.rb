@@ -18,6 +18,7 @@ class CompositionsController < ApplicationController
 
   def create
     @composition = Composition.new(post_params)
+    @composition.user_id = current_user.id
     if @composition.save
       redirect_to @composition , success: t('compositions.controller.post_created')
     else
@@ -30,23 +31,20 @@ class CompositionsController < ApplicationController
   end
 
   def update
-    if @composition.update(post_params)
-      redirect_to @composition, info: t('compositions.controller.post_update')
-    else
-      flash.now[:danger] = t('compositions.controller.post_not_created')
-      render :edit
-    end
+
   end
 
   def destroy
-    @composition.destroy
-    redirect_to compositions_path, success: t('compositions.controller.post_delete')
+    if current_user.id == @composition.user_id
+      @composition.destroy
+      redirect_to compositions_path, success: t('compositions.controller.post_delete')
+    end
   end
 
   private
 
   def post_params
-    params.require(:composition).permit(:title, :description, :image, :content, :all_tags, :category_id)
+    params.require(:composition).permit(:title, :description, :image, :content, :all_tags, :category_id, :user_id)
   end
 
   def set_composition_category

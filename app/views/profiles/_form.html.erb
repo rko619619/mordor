@@ -1,0 +1,38 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label t('activerecord.attributes.profile.screenname') %>
+    <%= form.text_field :screenname, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label t('activerecord.attributes.profile.full_name') %>
+    <%= form.text_field :full_name, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label t('activerecord.attributes.profile.city') %>
+    <%= form.text_field :city,class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label t('activerecord.attributes.profile.birthday') %>
+    <%= form.date_field :birthday,class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit t('application.create'), class:'btn btn-primary' %>
+    <%= link_to t('common.back'), :back, class:'btn btn-outline-secondary'%>
+  </div>
+<% end %>

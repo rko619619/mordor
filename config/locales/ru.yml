@@ -12,9 +12,22 @@ ru:
     edit: 'Редактировать'
     delete: 'Удалить'
     sure: 'Вы уверены?'
+    my_posts: 'Мои статьи'
+    no_posts: 'У вас еще нет постов :('
   will_paginate:
     previous_label: '&larr; Предыдущая'
     next_label: 'Следующая &rarr;'
+  profile:
+    view: 'Показать профиль'
+    create: 'Заполнить профиль'
+    new_profile: 'Профиль'
+    editing: 'Изменить профиль'
+    controller:
+      profile_created: 'Профиль успешно создан'
+      profile_not_created: 'Профиль не создан'
+      profile_update: 'Профиль успешно обновлен'
+      profile_not_update: 'Профиль не обновлен'
+      profile_delete: 'Профиль успешно удален'
   compositions:
     controller:
       post_created: 'Статья успешно создана'

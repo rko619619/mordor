@@ -68,10 +68,10 @@ Rails.application.configure do
       :address => "smtp.gmail.com",
       :port => 587,
       :domain => 'smtp.gmail.com',
-      :user_name => "mordorapp.heroku@gmail.com",
-      :password => "dendixvost",
+      :user_name =>  ENV['User_Login'],
+      :password =>  ENV['User_Password'],
       :authentication => :login,
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
   }
   config.action_mailer.default_url_options = { host: 'mordorwin.herokuapp.com'  }
   # Ignore bad email addresses and do not raise email delivery errors.
