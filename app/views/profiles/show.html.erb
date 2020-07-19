@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Screenname:</strong>
-  <%= @profile.screenname %>
-</p>
+<div class="form-group">
+  <h3><%= t('activerecord.attributes.profile.screenname') %></h3>
+  <div class="form-control"><%= @profile.screenname %></div>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
+<div class="form-group">
+  <h3><%= t('activerecord.attributes.profile.full_name') %></h3>
+  <div class="form-control"><%= @profile.full_name %></div>
+</div>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @profile.birthday %>
-</p>
+<div class="form-group">
+  <h3><%= t('activerecord.attributes.profile.city') %></h3>
+  <div class="form-control"><%= @profile.city %></div>
+</div>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
-<%= link_to 'Delete', method: :delete %>
+<div class="form-group">
+  <h3><%= t('activerecord.attributes.profile.birthday') %></h3>
+  <div class="form-control"><%= @profile.birthday %></div>
+</div>
+
+<div class="form-group">
+  <h3><%= t('activerecord.attributes.profile.email') %></h3>
+  <div class="form-control"><%= current_user.email %></div>
+</div>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile), class: 'btn btn-primary' %>
+<%= link_to 'Back', profiles_path, class: 'btn btn-outline-secondary' %>
+<%= link_to 'Delete', profile_path, method: :delete, class: 'btn btn-outline-danger' %>

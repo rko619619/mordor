@@ -12,6 +12,12 @@ en:
       category:
         name: 'Title'
         parent_id: 'Parent category'
+      profile:
+        screenname: 'Name'
+        full_name: 'Surname'
+        city: 'City'
+        birthday: 'Birthday'
+        email: 'Email'
     errors:
       models:
         user:

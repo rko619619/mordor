@@ -12,9 +12,22 @@ en:
     edit: 'Edit'
     delete: 'Delete'
     sure: 'Are you sure?'
+    my_posts: 'My Posts'
+    no_posts: 'No posts'
   will_paginate:
     previous_label: '&larr; Previous'
     next_label: 'Next &rarr;'
+  profile:
+    view: 'View profile'
+    create: 'Create profile'
+    new_profile: 'Profile'
+    editing: 'Editing profile'
+    controller:
+      profile_created: 'Profile was successfully created'
+      profile_not_created: 'Profile was not created'
+      profile_update: 'Profile was successfully updated'
+      profile_not_update: 'Profile was not update'
+      profile_delete: 'Profile was successfully delete'
   compositions:
     controller:
       post_created: 'Post was successfully created'
