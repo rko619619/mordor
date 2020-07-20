@@ -16,7 +16,18 @@
         <%= link_to t('common.delete'), composition_path(@composition), method: :delete, data: {confirm: "Вы уверены ?"} %>
       <% end %>
     </small>
+
   </section>
+
+  <section>
+    <%= link_to "Add_review", new_composition_review_path(@composition) %>
+    <% @reviews.each do|review| %>
+      <div class="star-rating" data-score="<%=review.rating %>"></div>
+    <% end %>
+  </section>
+
+
+
 
   <section class="composition-body">
     <%= image_tag @composition.image.url(:large), class: 'image-show' if @composition.image? %>
@@ -52,3 +63,12 @@
 
 
 </div>
+<script>
+    $('.star-rating').raty({
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        },
+        path: '/assets/',
+    });
+</script>

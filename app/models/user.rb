@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :compositions, dependent: :destroy
 
+  has_many :reviews
   has_one :profile, dependent: :destroy
 
   def username
