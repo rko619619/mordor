@@ -48,6 +48,11 @@ ru:
       text: 'Содержание:'
       descript: 'Описание:'
   admin:
+    user:
+      index:
+        title: 'Пользователи'
+        email: 'Email'
+        valid: 'Админ'
     categories:
       index:
         title: 'Категории'

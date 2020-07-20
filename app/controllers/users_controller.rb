@@ -33,8 +33,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @composition.destroy
-    redirect_to compositions_path, success: t('compositions.controller.post_delete')
+
   end
 
   def post_params

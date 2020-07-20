@@ -9,7 +9,7 @@
         |
         <%= link_to @composition.category.name, @composition.category%>
       <% end %>
-      <% if user_signed_in? and current_user.id == @composition.user_id %>
+      <% if user_signed_in? and current_user.id == @composition.user_id%>
         |
         <%= link_to t('common.edit') , edit_composition_path(@composition)%>
         |
