@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.new(review_params)
     @review.composition_id = @composition.id
     @review.user_id = current_user.id
