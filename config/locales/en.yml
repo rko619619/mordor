@@ -47,16 +47,17 @@ en:
     show:
       text: 'Content:'
       descript: 'Description:'
-  categories:
-    index:
-      title: 'Category'
-    new:
-      title: 'New category'
-    edit:
-      title: 'Edit category'
-    form:
-      submit:
-        '%{action} category'
+  admin:
+    categories:
+      index:
+        title: 'Category'
+      new:
+        title: 'New category'
+      edit:
+        title: 'Edit category'
+      form:
+        submit:
+          '%{action} category'
 
   tags:
     no_posts: 'No posts'

@@ -10,10 +10,15 @@ Rails.application.routes.draw do
     end
 
     resources  :users do
-      resource :compositions
+      resource :compositions, only: [:show, :index]
     end
 
     resources :tags, only: [:show]
-    resources :categories
+    resources :categories, only: [:show]
+
+    namespace :admin do
+      resources :categories, except: [:show]
+    end
+
   end
 end

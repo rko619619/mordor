@@ -19,6 +19,10 @@ ru:
         email: 'Email'
     errors:
       models:
+        composition:
+          attributes:
+            user:
+              required: 'fdgf'
         user:
           attributes:
             password_confirmation:

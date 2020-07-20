@@ -6,7 +6,7 @@ class Composition < ApplicationRecord
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
-
+  default_scope -> { order('created_at DESC') }
   belongs_to :category
 
   belongs_to :user, dependent: :destroy
