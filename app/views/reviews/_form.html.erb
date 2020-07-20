@@ -1,0 +1,16 @@
+<%= form_with model: [@composition, @review] do |f|   %>
+  <div id="form-group">
+    <%=f.label :rating %>
+    <%=f.number_field :rating %>
+  </div>
+
+  <div class="form-group">
+  <%= f.button :Submit,  class:'btn btn-outline-primary'%>
+  </div>
+<% end %>
+<script>
+    $('#rating-form').raty({
+        path: '/assets/images',
+        scoreName: 'user_feedback[rating]'
+    });
+</script>

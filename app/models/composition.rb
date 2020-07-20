@@ -6,7 +6,7 @@ class Composition < ApplicationRecord
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
-
+  has_many :reviews
   belongs_to :category
 
   belongs_to :user, dependent: :destroy

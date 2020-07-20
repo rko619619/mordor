@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     resources :compositions do
       resource :comments, only: [:create, :destroy]
+      resources :reviews
     end
 
     resources  :users do
