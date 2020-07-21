@@ -1,6 +1,6 @@
 class Admin::CompositionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_composition_edit, only: [:edit]
+  before_action :set_composition_edit, only: [:edit, :destroy]
   def index
     @compositions = Composition.where(:user_id =>params[:user_id] )
   end
@@ -39,7 +39,7 @@ class Admin::CompositionsController < ApplicationController
 
   def destroy
     @composition.destroy
-    redirect_to admin_users_path, success: t('compositions.controller.post_delete')
+    redirect_to admin_user_compositions_path, success: t('compositions.controller.post_delete')
   end
 
   private
