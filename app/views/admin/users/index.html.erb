@@ -9,6 +9,7 @@
       <th><%= t('admin.user.index.valid') %></th>
       <th><%= "Настройки" %></th>
       <th><%= "Показать профиль" %></th>
+      <th><%= 'Показать все cтатьи пользователя' %></th>
     </tr>
     </thead>
     <tbody>
@@ -18,9 +19,18 @@
       <td><%= user.email %></td>
       <td><%= user.admin %></td>
       <td>
-        <%= link_to t('common.edit'), edit_admin_user_path(user), class: 'btn btn-outline-primary btn-sm'%>
+        <%= link_to 'Назначить админом', edit_admin_user_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
-
+      <td>
+        <% @profiles.each do |profile| %>
+          <% if profile.id == user.id %>
+            <%= link_to 'Показать профиль', profile_path(user), class: 'btn btn-outline-primary btn-sm'%>
+          <% else %>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+      </td>
      </tr>
 
     <% end %>

@@ -4,6 +4,9 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = User.all
+    @profiles = Profile.all
+    @compositions = Composition.all
+
   end
 
   def new
