@@ -1,6 +1,6 @@
 class CompositionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_composition_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_composition, only: [:show, :edit, :update, :destroy]
 
   def index
     @compositions = Composition.order(created_at: :desc)
@@ -31,7 +31,12 @@ class CompositionsController < ApplicationController
   end
 
   def update
-
+    if @composition.update(post_params)
+      redirect_to @composition, success: t('compositions.controller.post_update')
+    else
+      flash.now[:danger] = t('compositions.controller.post_not_created')
+      render :edit
+    end
   end
 
   def destroy
@@ -47,7 +52,7 @@ class CompositionsController < ApplicationController
     params.require(:composition).permit(:title, :description, :image, :content, :all_tags, :category_id, :user_id)
   end
 
-  def set_composition_category
+  def set_composition
     @composition = Composition.find(params[:id])
   end
 end

@@ -53,9 +53,15 @@ ru:
         title: 'Пользователи'
         email: 'Email'
         valid: 'Админ'
+        edit: 'Настройки'
+        view: 'Показать профиль'
+        users_posts: 'Показать пользовательские статьи'
+        set_admin: 'Назначить админом'
+        posts: 'Показать статьи'
     categories:
       index:
         title: 'Категории'
+
       new:
         title: 'Новая категория'
       edit:
@@ -63,7 +69,9 @@ ru:
       form:
         submit:
             '%{action} категорию'
-
+    compositions:
+      index:
+        no_posts: 'У пользователя нет статей :('
   tags:
     no_posts: 'Статей нет'
   comments:

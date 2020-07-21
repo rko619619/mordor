@@ -7,9 +7,9 @@
       <th>#</th>
       <th><%= t('admin.user.index.email') %></th>
       <th><%= t('admin.user.index.valid') %></th>
-      <th><%= "Настройки" %></th>
-      <th><%= "Показать профиль" %></th>
-      <th><%= 'Показать все cтатьи пользователя' %></th>
+      <th><%= t('admin.user.index.edit') %></th>
+      <th><%= t('admin.user.index.view') %></th>
+      <th><%= t('admin.user.index.users_posts') %></th>
     </tr>
     </thead>
     <tbody>
@@ -19,19 +19,20 @@
       <td><%= user.email %></td>
       <td><%= user.admin %></td>
       <td>
-        <%= link_to 'Назначить админом', edit_admin_user_path(user), class: 'btn btn-outline-primary btn-sm'%>
+        <%= link_to t('admin.user.index.set_admin'), edit_admin_user_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
       <td>
         <% @profiles.each do |profile| %>
           <% if profile.id == user.id %>
-            <%= link_to 'Показать профиль', profile_path(user), class: 'btn btn-outline-primary btn-sm'%>
+            <%= link_to t('admin.user.index.view'), profile_path(user), class: 'btn btn-outline-primary btn-sm'%>
           <% else %>
           <% end %>
         <% end %>
       </td>
       <td>
+        <%= link_to t('admin.user.index.posts'), admin_user_compositions_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
-     </tr>
+      </tr>
 
     <% end %>
   </table>

@@ -48,6 +48,16 @@ en:
       text: 'Content:'
       descript: 'Description:'
   admin:
+    user:
+      index:
+        title: 'Users'
+        email: 'Email'
+        valid: 'Admin'
+        edit: 'Config'
+        view: 'View profile'
+        users_posts: 'View users posts'
+        set_admin: 'Assign admin'
+        posts: 'View posts'
     categories:
       index:
         title: 'Category'

@@ -1,0 +1,7 @@
+<% if @compositions.present? %>
+<section id='compositions'>
+  <%= render @compositions %>
+</section>
+<% else %>
+  <h2><%= t('admin.compositions.index.no_posts') %></h2>
+<% end %>

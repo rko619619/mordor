@@ -21,6 +21,6 @@ class Composition < ApplicationRecord
       Tag.where(name: name.strip).first_or_create!
     end
   end
-  validates :title, :description, :content, presence: true
+  validates :title, :description, :content, presence: true 
 
 end
