@@ -1,7 +1,7 @@
 class CompositionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_composition, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_ban, except: [:index, :show]
   def index
     @compositions = Composition.order(created_at: :desc)
     @compositions = Composition.paginate(page: params[:page],per_page: 8)
@@ -55,4 +55,13 @@ class CompositionsController < ApplicationController
   def set_composition
     @composition = Composition.find(params[:id])
   end
+
+  protected
+
+  def check_ban
+    if current_user.ban?
+      redirect_to root_path, alert: "Вы были забанены"
+    end
+  end
+
 end

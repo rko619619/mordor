@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_composition
   before_action :authenticate_user!
-
+  before_action :check_ban
   def create
     @comment = @composition.comments.new(comment_params)
     @comment.user = current_user
@@ -20,4 +20,13 @@ class CommentsController < ApplicationController
   def set_composition
     @composition = Composition.find(params[:composition_id])
   end
+
+  protected
+
+  def check_ban
+    if current_user.ban?
+      redirect_to root_path, alert: "Вы были забанены"
+    end
+  end
+
 end

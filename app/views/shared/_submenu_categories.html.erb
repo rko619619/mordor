@@ -1,4 +1,4 @@
-<ul class="nav list-group nav-stacked nested_nav">
+<ul class="nav list-group nav-stacked nested_nav picun">
   <% categories.each do |category, children| %>
      <li>
        <%= link_to category.name, category, class: "list-group-item #{'active' if current_page?(category_path(category))|| @composition.present? && @composition.category == category}" %>

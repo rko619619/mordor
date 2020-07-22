@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_ban
 
   def index
     @profiles = Profile.all
@@ -49,4 +50,12 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:screenname, :city, :birthday, :full_name)
     end
+
+  protected
+
+  def check_ban
+    if current_user.ban?
+      redirect_to root_path, alert: "Вы были забанены"
+    end
+  end
 end

@@ -7,6 +7,8 @@
       <th>#</th>
       <th><%= t('admin.user.index.email') %></th>
       <th><%= t('admin.user.index.valid') %></th>
+      <th><%= 'Забанен?'%></th>
+
       <th><%= t('admin.user.index.edit') %></th>
       <th><%= t('admin.user.index.view') %></th>
       <th><%= t('admin.user.index.users_posts') %></th>
@@ -18,6 +20,7 @@
       <td><%= index + 1 %></td>
       <td><%= user.email %></td>
       <td><%= user.admin %></td>
+      <td><%= user.ban %></td>
       <td>
         <%= link_to t('admin.user.index.set_admin'), edit_admin_user_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
@@ -26,6 +29,8 @@
       </td>
       <td>
         <%= link_to t('admin.user.index.posts'), admin_user_compositions_path(user), class: 'btn btn-outline-primary btn-sm'%>
+      </td>
+      <td>
       </td>
     <% end %>
       </tr>

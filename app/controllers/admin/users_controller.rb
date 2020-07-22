@@ -22,7 +22,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to admin_users_path, success: 'Категория успешно обновлена'
+      redirect_to root_path, success: 'Категория успешно обновлена'
     else
       flash[:danger] = 'Категория не обновлена'
       render :edit
@@ -31,6 +31,12 @@ class Admin::UsersController < ApplicationController
 
 
   def destroy
+    if @user.destroy
+      redirect_to @users
+    else
+      flash[:danger] = 'Категория не обновлена'
+      render :edit
+    end
 
   end
 
@@ -41,7 +47,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :admin)
+    params.require(:user).permit(:email, :admin, :ban)
   end
 
   protected
