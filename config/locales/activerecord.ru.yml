@@ -21,8 +21,8 @@ ru:
       models:
         composition:
           attributes:
-            user:
-              required: 'fdgf'
+            category:
+              required: 'не может быть пустым'
         user:
           attributes:
             password_confirmation:

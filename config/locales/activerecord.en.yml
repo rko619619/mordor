@@ -2,7 +2,6 @@ en:
   activerecord:
     models:
       composition: 'Post'
-
     attributes:
       composition:
         title: 'Title'
@@ -20,10 +19,14 @@ en:
         email: 'Email'
     errors:
       models:
+        composition:
+          attributes:
+            category:
+              required: 'do not a blank'
         user:
           attributes:
             password_confirmation:
-              confirmation: 'не совпадают'
+              confirmation: 'not confirm'
             password:
               too_short: 'not confirm'
             email:
