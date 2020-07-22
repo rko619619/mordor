@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_composition, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @compositions = Composition.where(user_id: current_user.id)
@@ -34,7 +35,6 @@ class UsersController < ApplicationController
 
   def destroy
     @composition.destroy
-    redirect_to compositions_path, success: t('compositions.controller.post_delete')
   end
 
   def post_params

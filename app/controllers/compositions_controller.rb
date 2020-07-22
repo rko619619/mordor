@@ -40,7 +40,7 @@ class CompositionsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @composition.user_id
+    if current_user.id == @composition.user_id or current_user.admin?
       @composition.destroy
       redirect_to compositions_path, success: t('compositions.controller.post_delete')
     end

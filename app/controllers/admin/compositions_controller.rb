@@ -1,6 +1,8 @@
 class Admin::CompositionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_composition_edit, only: [:edit, :destroy]
+  before_action :check_admin
+
   def index
     @compositions = Composition.where(:user_id =>params[:user_id] )
   end
@@ -39,7 +41,7 @@ class Admin::CompositionsController < ApplicationController
 
   def destroy
     @composition.destroy
-    redirect_to admin_user_compositions_path, success: t('compositions.controller.post_delete')
+    redirect_to user_compositions_path, success: t('compositions.controller.post_delete')
   end
 
   private
@@ -54,6 +56,12 @@ class Admin::CompositionsController < ApplicationController
 
   def set_composition_edit
     @composition = Composition.find(params[:id])
+  end
+
+  protected
+
+  def check_admin
+    redirect_to root_path, alert: "У вас нет прав доступа к данной странице" unless current_user.admin?
   end
 
 end

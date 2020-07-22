@@ -1,12 +1,11 @@
 class Admin::UsersController < ApplicationController
   before_action :set_users, only: [:edit, :update, :destroy]
-
-
+  before_action :authenticate_user!
+  before_action :check_admin
   def index
     @users = User.all
     @profiles = Profile.all
     @compositions = Composition.all
-
   end
 
   def new
@@ -32,7 +31,7 @@ class Admin::UsersController < ApplicationController
 
 
   def destroy
-    @user.destroy
+
   end
 
   private
@@ -43,6 +42,12 @@ class Admin::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :admin)
+  end
+
+  protected
+
+  def check_admin
+    redirect_to root_path, alert: "У вас нет прав доступа к данной странице" unless current_user.admin?
   end
 
 end

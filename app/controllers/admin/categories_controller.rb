@@ -1,6 +1,7 @@
 class Admin::CategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_category, only: [:edit, :update, :destroy]
-
+  before_action :check_admin
 
   def index
     @categories = Category.all
@@ -48,6 +49,12 @@ class Admin::CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name, :parent_id)
+  end
+
+  protected
+
+  def check_admin
+    redirect_to root_path, alert: "У вас нет прав доступа к данной странице" unless current_user.admin?
   end
 
 end

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :categories, except: [:show]
       resources :users do
         resources :compositions
+        resources :profiles
       end
     end
 

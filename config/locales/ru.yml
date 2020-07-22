@@ -58,6 +58,9 @@ ru:
         users_posts: 'Показать пользовательские статьи'
         set_admin: 'Назначить админом'
         posts: 'Показать статьи'
+    profile:
+      index:
+        no_profile: 'У пользователя нет профиля :('
     categories:
       index:
         title: 'Категории'

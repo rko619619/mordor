@@ -58,6 +58,9 @@ en:
         users_posts: 'View users posts'
         set_admin: 'Assign admin'
         posts: 'View posts'
+    profile:
+      index:
+        no_profile: "User don't have a profile :("
     categories:
       index:
         title: 'Category'

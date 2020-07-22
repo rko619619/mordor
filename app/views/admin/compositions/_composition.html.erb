@@ -7,12 +7,7 @@
         |
         <%= link_to composition.category.name, composition.category%>
       <% end %>
-        |
-        <%= link_to t('common.edit'), edit_composition_path(composition)%>
-        |
-        <%= link_to t('common.delete'), admin_user_compositions_path(composition), method: :delete, data: {confirm: t('common.sure')} %>
-        |
-      <%= pluralize(composition.comments.count, "comment") %>
+        <%= pluralize(composition.comments.count, "comment") %>
 
     </small>
   </section>

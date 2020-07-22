@@ -1,9 +1,11 @@
-class ProfilesController < ApplicationController
+class Admin::ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_admin
+
 
   def index
-    @profiles = Profile.all
+    @profile = Profile.where(:user_id =>params[:user_id] )
   end
 
   def show
@@ -28,7 +30,7 @@ class ProfilesController < ApplicationController
 
   def update
       if @profile.update(profile_params)
-        redirect_to @profile, info: t('profile.controller.profile_update')
+        redirect_to admin_users_path, info: t('profile.controller.profile_update')
       else
         flash.now[:danger] = t('profile.controller.profile_not_created')
         render :edit
@@ -43,10 +45,16 @@ class ProfilesController < ApplicationController
   private
 
     def set_profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.where(:user_id =>params[:user_id] )
     end
 
     def profile_params
       params.require(:profile).permit(:screenname, :city, :birthday, :full_name)
     end
+
+  protected
+
+  def check_admin
+    redirect_to root_path, alert: "У вас нет прав доступа к данной странице" unless current_user.admin?
+  end
 end

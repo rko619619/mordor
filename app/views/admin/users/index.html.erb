@@ -22,18 +22,14 @@
         <%= link_to t('admin.user.index.set_admin'), edit_admin_user_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
       <td>
-        <% @profiles.each do |profile| %>
-          <% if profile.id == user.id %>
-            <%= link_to t('admin.user.index.view'), profile_path(user), class: 'btn btn-outline-primary btn-sm'%>
-          <% else %>
-          <% end %>
-        <% end %>
+        <%= link_to t('admin.user.index.view'), admin_user_profiles_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
       <td>
         <%= link_to t('admin.user.index.posts'), admin_user_compositions_path(user), class: 'btn btn-outline-primary btn-sm'%>
       </td>
+    <% end %>
       </tr>
 
-    <% end %>
+
   </table>
 </section>
