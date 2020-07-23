@@ -51,7 +51,7 @@ en:
     form:
       ban: 'Banned?'
     ban: 'You are banned :('
-      permission: 'You do not have permission to access this page :('
+    permission: 'You do not have permission to access this page :('
     user:
       index:
         title: 'Users'
