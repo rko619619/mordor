@@ -6,10 +6,10 @@ class Composition < ApplicationRecord
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
-
+  default_scope -> { order('created_at DESC') }
   belongs_to :category
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
 
 
   def all_tags
@@ -21,6 +21,6 @@ class Composition < ApplicationRecord
       Tag.where(name: name.strip).first_or_create!
     end
   end
-  validates :title, :description, :content, presence: true
+  validates :title, :description, :content, presence: true 
 
 end

@@ -1,10 +1,11 @@
-class ProfilesController < ApplicationController
+class Admin::ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_admin
   before_action :check_ban
 
   def index
-    @profiles = Profile.all
+    @profile = Profile.where(:user_id =>params[:user_id] )
   end
 
   def show
@@ -29,7 +30,7 @@ class ProfilesController < ApplicationController
 
   def update
       if @profile.update(profile_params)
-        redirect_to @profile, info: t('profile.controller.profile_update')
+        redirect_to admin_users_path, info: t('profile.controller.profile_update')
       else
         flash.now[:danger] = t('profile.controller.profile_not_created')
         render :edit
@@ -44,7 +45,7 @@ class ProfilesController < ApplicationController
   private
 
     def set_profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.where(:user_id =>params[:user_id] )
     end
 
     def profile_params
@@ -53,9 +54,14 @@ class ProfilesController < ApplicationController
 
   protected
 
+  def check_admin
+    redirect_to root_path, alert: t('admin.permission') unless current_user.admin?
+  end
+
   def check_ban
     if current_user.ban?
       redirect_to root_path, alert: t('admin.ban')
     end
   end
+
 end

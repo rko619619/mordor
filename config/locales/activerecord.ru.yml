@@ -19,6 +19,10 @@ ru:
         email: 'Email'
     errors:
       models:
+        composition:
+          attributes:
+            category:
+              required: 'не может быть пустым'
         user:
           attributes:
             password_confirmation:

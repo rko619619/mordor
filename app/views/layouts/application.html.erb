@@ -25,22 +25,34 @@
         <li class="nav-item active">
           <a class="nav-link" href="<%=compositions_path%>"><%= t('application.title') %><span class="sr-only">(current)</span></a>
         </li>
-        <% if user_signed_in? %>
-          <li>
-            <a class="nav-link" href="<%= users_path %>"><%= t('common.my_posts')%><span class="sr-only">(current)</span></a>
-          </li>
+        <% if user_signed_in?%>
+          <% if current_user.admin? %>
+              <li>
+                <a class="nav-link" href="<%= admin_categories_path %>"><%= t('admin.categories.index.title.')%><span class="sr-only">(current)</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="<%= admin_users_path %>"><%= t('admin.user.index.title.')%><span class="sr-only">(current)</span></a>
+              </li>
+          <%else %>
+            <% if current_user.ban == false %>
+              <li>
+                <a class="nav-link" href="<%= users_path %>"><%= t('common.my_posts')%><span class="sr-only">(current)</span></a>
+              </li>
+            <% end %>
+          <% end %>
         <% end %>
       </ul>
 
       <% if user_signed_in? %>
-
-        <form class="form-inline my-2 my-lg-0">
-          <% if current_user.profile == nil %>
-            <%= link_to t('profile.create'), new_profile_path, class: 'btn btn-outline-primary pull-xs-right' %>
-          <% else %>
-            <%= link_to t('profile.view'), current_user.profile, class: 'btn btn-outline-primary pull-xs-right' %>
+        <% if current_user.ban == false %>
+          <form class="form-inline my-2 my-lg-0">
+            <% if current_user.profile == nil %>
+              <%= link_to t('profile.create'), new_profile_path, class: 'btn btn-outline-primary pull-xs-right' %>
+            <% else %>
+              <%= link_to t('profile.view'), current_user.profile, class: 'btn btn-outline-primary pull-xs-right' %>
+            <% end %>
+              <%= link_to t('application.new'), new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
           <% end %>
-            <%= link_to t('application.new'), new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
       <% end %>
         <input class="form-control mr-sm-2 pull-xs-right " type="search" placeholder="<%= t('application.search')%>" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0 pull-xs-right" type="submit"><%=  t('application.search') %></button>
@@ -71,34 +83,32 @@
     </div>
   </nav>
 
-  <div class="container main">
-    <div class="row ">
-      <div class="col-md-12">
-        <% flash.each do |name,message| %>
-          <div class="alert <%= boostrap_class_for(name) %>">
-            <button class="close" data-dismiss="alert">&times;</button>
-            <%= message %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="row ">
-      <div class="col-md-9">
-        <%= yield %>
-      </div>
-        <div class="col-md-3">
-          <%= render 'shared/submenu' %>
-        <div class="tag-cloud">
-          <h2><%= t('activerecord.attributes.composition.all_tags') %></h2>
-          <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
-            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <div class="container main">
+      <div class="row ">
+        <div class="col-md-12">
+          <% flash.each do |name,message| %>
+            <div class="alert <%= boostrap_class_for(name) %>">
+              <button class="close" data-dismiss="alert">&times;</button>
+              <%= message %>
+            </div>
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
 
-  <%= render 'layouts/alerts' %>
+      <div class="row ">
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+          <div class="col-md-3">
+            <%= render 'shared/submenu' %>
+          <div class="tag-cloud">
+            <h2><%= t('activerecord.attributes.composition.all_tags') %></h2>
+            <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
+              <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

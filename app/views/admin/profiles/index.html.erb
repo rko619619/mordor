@@ -1,0 +1,32 @@
+<%if @profile.present? %>
+  <% @profile.each do |profile| %>
+    <p id="notice"><%= notice %></p>
+
+    <div class="form-group">
+      <h3><%= t('activerecord.attributes.profile.screenname') %></h3>
+      <div class="form-control"><%= profile.screenname %></div>
+    </div>
+
+    <div class="form-group">
+      <h3><%= t('activerecord.attributes.profile.full_name') %></h3>
+      <div class="form-control"><%= profile.full_name %></div>
+    </div>
+
+    <div class="form-group">
+      <h3><%= t('activerecord.attributes.profile.city') %></h3>
+      <div class="form-control"><%= profile.city %></div>
+    </div>
+
+    <div class="form-group">
+      <h3><%= t('activerecord.attributes.profile.birthday') %></h3>
+      <div class="form-control"><%= profile.birthday %></div>
+    </div>
+
+    <%= link_to t('common.edit'), edit_profile_path(profile), class: 'btn btn-primary' %>
+    <%= link_to t('common.back'), admin_users_path, class: 'btn btn-outline-secondary' %>
+  <% end %>
+<% else %>
+  <h2><%= t('admin.profile.index.no_profile') %></h2>
+<%end %>
+
+

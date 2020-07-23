@@ -1,0 +1,23 @@
+<article class="composition">
+  <section class="composition-head">
+    <h2><%= link_to composition.title, composition_path(composition)%></h2>
+    <small>
+      <time><%= composition.created_at.to_date.strftime("%d %B, %Y")%></time>
+      <% if composition.category.present?%>
+        |
+        <%= link_to composition.category.name, composition.category%>
+      <% end %>
+        <%= pluralize(composition.comments.count, "comment") %>
+
+    </small>
+  </section>
+  <section class="composition-description clearfix">
+    <%= image_tag composition.image.url(:thumb), class:'img-thumnail thumb' if composition.image? %>
+    <%= composition.description %>
+  </section>
+
+  <section class="footer-summary">
+    <%= raw composition.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'badge badge-primary' }.join(' ') %>
+  </section>
+
+</article>

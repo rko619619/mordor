@@ -9,11 +9,15 @@
         |
         <%= link_to @composition.category.name, @composition.category%>
       <% end %>
-      <% if user_signed_in? and current_user.id == @composition.user_id%>
-        |
-        <%= link_to t('common.edit') , edit_composition_path(@composition)%>
-        |
-        <%= link_to t('common.delete'), composition_path(@composition), method: :delete, data: {confirm: "Вы уверены ?"} %>
+      <% if user_signed_in?%>
+        <%  if current_user.id == @composition.user_id or current_user.admin? %>
+          <% if current_user.ban == false %>
+            |
+            <%= link_to t('common.edit') , edit_composition_path(@composition)%>
+            |
+            <%= link_to t('common.delete'), composition_path(@composition), method: :delete, data: {confirm: "Вы уверены ?"} %>
+          <% end %>
+        <% end %>
       <% end %>
     </small>
   </section>
