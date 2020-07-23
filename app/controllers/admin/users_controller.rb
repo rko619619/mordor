@@ -22,9 +22,9 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, success: 'Категория успешно обновлена'
+      redirect_to root_path, success: t("admin.user.controller.user_update")
     else
-      flash[:danger] = 'Категория не обновлена'
+      flash[:danger] = t('admin.categories.controller.user_not_update')
       render :edit
     end
   end
@@ -34,7 +34,7 @@ class Admin::UsersController < ApplicationController
     if @user.destroy
       redirect_to @users
     else
-      flash[:danger] = 'Категория не обновлена'
+      flash[:danger] = t('admin.categories.controller.user_delete')
       render :edit
     end
 
@@ -53,7 +53,7 @@ class Admin::UsersController < ApplicationController
   protected
 
   def check_admin
-    redirect_to root_path, alert: "У вас нет прав доступа к данной странице" unless current_user.admin?
+    redirect_to root_path, alert: t('admin.permission') unless current_user.admin?
   end
 
 end

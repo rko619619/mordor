@@ -60,7 +60,7 @@ class CompositionsController < ApplicationController
 
   def check_ban
     if current_user.ban?
-      redirect_to root_path, alert: "Вы были забанены"
+      redirect_to root_path, alert: t('admin.ban')
     end
   end
 

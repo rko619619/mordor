@@ -15,10 +15,10 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to admin_categories_path, success: 'Категория успешно создана'
+      redirect_to admin_categories_path, success: t('admin.categories.controller.categories_created')
     else
       @categories = Category.all.order(:name)
-      flash[:danger] = 'Категория не создана'
+      flash[:danger] = t('admin.categories.controller.categories_not_created')
       render :new
     end
   end
@@ -29,16 +29,16 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      redirect_to admin_categories_path, success: 'Категория успешно обновлена'
+      redirect_to admin_categories_path, success: t('admin.categories.controller.categories_update')
     else
-      flash[:danger] = 'Категория не обновлена'
+      flash[:danger] = t('admin.categories.controller.categories_not_update')
       render :edit
     end
   end
 
   def destroy
     @category.destroy
-    redirect_to admin_categories_path, success: 'Категория успешно удалена'
+    redirect_to admin_categories_path, success: t('admin.categories.controller.categories_delete')
   end
 
   private
@@ -54,7 +54,7 @@ class Admin::CategoriesController < ApplicationController
   protected
 
   def check_admin
-    redirect_to root_path, alert: "У вас нет прав доступа к данной странице" unless current_user.admin?
+    redirect_to root_path, alert: t('admin.permission') unless current_user.admin?
   end
 
 end

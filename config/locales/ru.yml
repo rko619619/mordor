@@ -48,6 +48,10 @@ ru:
       text: 'Содержание:'
       descript: 'Описание:'
   admin:
+    form:
+      ban: 'Забанить?'
+    ban: 'Вы были забанены :('
+    permission: 'У вас нет прав доступа к данной странице'
     user:
       index:
         title: 'Пользователи'
@@ -56,15 +60,26 @@ ru:
         edit: 'Настройки'
         view: 'Показать профиль'
         users_posts: 'Показать пользовательские статьи'
-        set_admin: 'Назначить админом'
+        set_admin: 'Настройки пользователя'
         posts: 'Показать статьи'
+      controller:
+        user_created: 'Пользователь успешно создан'
+        user_not_created: 'Пользователь не создан'
+        user_update: 'Пользователь успешно обновлен'
+        user_not_update: 'Пользователь не обновлен'
+        user_delete: 'Пользователь успешно удален'
     profile:
       index:
         no_profile: 'У пользователя нет профиля :('
     categories:
+      controller:
+        categories_created: 'Категория успешно создана'
+        categories_not_created: 'Категория не создана'
+        categories_update: 'Статья успешно обновлена'
+        categories_not_update: 'Статья не обновлена'
+        categories_delete: 'Статья успешно удалена'
       index:
         title: 'Категории'
-
       new:
         title: 'Новая категория'
       edit:
@@ -104,7 +119,6 @@ ru:
     cancel_acc: 'Удалить мой аккаунт'
     resend: 'Отправить письмо для подтверждения'
     res: 'Отправить письмо'
-
   confirmations:
     confirmed: Ваш адрес эл. почты успешно подтвержден.
     new:

@@ -26,15 +26,16 @@ class UsersController < ApplicationController
 
   def update
     if @composition.update(post_params)
-      redirect_to @composition, info: t('compositions.controller.post_update')
+      redirect_to @composition, info: t('admin.user.controller.user_update')
     else
-      flash.now[:danger] = t('compositions.controller.post_not_created')
+      flash.now[:danger] = t('admin.user.controller.user_not_update')
       render :edit
     end
   end
 
   def destroy
     @composition.destroy
+    flash.now[:danger] = t('compositions.controller.post_delete')
   end
 
   def post_params
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
 
   def check_ban
     if current_user.ban?
-      redirect_to root_path, alert: "Вы были забанены"
+      redirect_to root_path, alert: t('admin.ban')
     end
   end
 
