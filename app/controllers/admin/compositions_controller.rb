@@ -2,7 +2,7 @@ class Admin::CompositionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_composition_edit, only: [:edit, :destroy]
   before_action :check_admin
-
+  before_action :check_ban
   def index
     @compositions = Composition.where(:user_id =>params[:user_id] )
   end
@@ -62,6 +62,12 @@ class Admin::CompositionsController < ApplicationController
 
   def check_admin
     redirect_to root_path, alert: t('admin.permission') unless current_user.admin?
+  end
+
+  def check_ban
+    if current_user.ban?
+      redirect_to root_path, alert: t('admin.ban')
+    end
   end
 
 end

@@ -2,6 +2,8 @@ class Admin::UsersController < ApplicationController
   before_action :set_users, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :check_admin
+  before_action :check_ban
+
   def index
     @users = User.all
     @profiles = Profile.all
@@ -54,6 +56,12 @@ class Admin::UsersController < ApplicationController
 
   def check_admin
     redirect_to root_path, alert: t('admin.permission') unless current_user.admin?
+  end
+
+  def check_ban
+    if current_user.ban?
+      redirect_to root_path, alert: t('admin.ban')
+    end
   end
 
 end

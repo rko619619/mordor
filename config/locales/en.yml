@@ -50,6 +50,7 @@ en:
   admin:
     form:
       ban: 'Banned?'
+      admin: 'Assign a admin?'
     ban: 'You are banned :('
     permission: 'You do not have permission to access this page :('
     user:
@@ -81,6 +82,7 @@ en:
       index:
         title: 'Category'
       new:
+        create: 'Create category'
         title: 'New category'
       edit:
         title: 'Edit category'
