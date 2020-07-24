@@ -11,7 +11,7 @@
   <div class="form-group">
     <%= f.label t('devise.password') %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length  %> <%= t('devise.chapte') %>> )</em>
+    <em>(<%= @minimum_password_length  %> <%= t('devise.chapte') %>)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password",class: "form-control" %>
   </div>

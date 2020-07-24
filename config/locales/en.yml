@@ -47,17 +47,51 @@ en:
     show:
       text: 'Content:'
       descript: 'Description:'
-  categories:
-    index:
-      title: 'Category'
-    new:
-      title: 'New category'
-    edit:
-      title: 'Edit category'
+  admin:
     form:
-      submit:
-        '%{action} category'
-
+      ban: 'Banned?'
+      admin: 'Assign a admin?'
+    ban: 'You are banned :('
+    permission: 'You do not have permission to access this page :('
+    user:
+      index:
+        title: 'Users'
+        email: 'Email'
+        valid: 'Admin'
+        edit: 'Config'
+        view: 'View profile'
+        users_posts: 'View users posts'
+        set_admin: 'Assign admin'
+        posts: 'View posts'
+      controller:
+        user_created: 'User was successfully created'
+        user_not_created: 'User was not created'
+        user_update: 'User was successfully updated'
+        user_not_update: 'User was not update'
+        user_delete: 'User was successfully delete'
+    profile:
+      index:
+        no_profile: "User don't have a profile :("
+    categories:
+      controller:
+        categories_created: 'Category was successfully created'
+        categories_not_created: 'Category was not created'
+        categories_update: 'Category was successfully updated'
+        categories_not_update: 'Category was not update'
+        categories_delete: 'Category was successfully delete'
+      index:
+        title: 'Category'
+      new:
+        create: 'Create category'
+        title: 'New category'
+      edit:
+        title: 'Edit category'
+      form:
+        submit:
+          '%{action} category'
+    compositions:
+      index:
+        no_posts: 'User dont have post :( :('
   tags:
     no_posts: 'No posts'
   comments:
