@@ -1,7 +1,7 @@
 class Composition < ApplicationRecord
   has_rich_text :content
   mount_uploader :image, ImageUploader
-
+  has_one_attached :image
   has_many :comments, dependent: :destroy
 
   has_many :taggings, dependent: :destroy
