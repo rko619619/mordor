@@ -25,6 +25,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'rspec'
+gem 'aws-sdk-s3', '~> 1.75'
 gem 'annotate'
 gem 'pry'
 gem 'devise', '~> 4.7', '>= 4.7.2'

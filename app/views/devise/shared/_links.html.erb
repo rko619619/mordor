@@ -19,7 +19,7 @@
 
 <div class="link_to">
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-    <%= link_to t('devise.confirmation_inst'), new_confirmation_path(resource_name) %><br />
+      <%= link_to t('devise.confirmation_inst'), new_confirmation_path(resource_name) %><br />
   <% end %>
 </div>
 
