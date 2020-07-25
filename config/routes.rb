@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
     root 'compositions#index'
 
+    resources :searches, only: [:index]
+
     resources :compositions do
       resource :comments, only: [:create, :destroy]
     end
