@@ -8,8 +8,8 @@ local:
 
 amazon:
   service: S3
-  access_key_id: AKIAIEVQ2OL4GAVDAAVQ
-  secret_access_key: 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
+  access_key_id: <%ENV['S3_ACCESS_KEY'] %>
+  secret_access_key: <%ENV['S3_SECRET_KEY'] %>
   region: eu-west-2
   bucket: mordorapp
 
