@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
     root 'compositions#index'
 
-    resources :searches, only: [:index]
+    get 'searches', to: 'searches#index', as: :search
+
+
 
     resources :compositions do
       resource :comments, only: [:create, :destroy]

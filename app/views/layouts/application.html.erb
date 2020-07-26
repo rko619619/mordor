@@ -45,7 +45,7 @@
 
       <% if user_signed_in? %>
         <% if current_user.ban == false %>
-          <form class="form-inline my-2 my-lg-0">
+          <div class="form-inline my-2 my-lg-0">
             <% if current_user.profile == nil %>
               <%= link_to t('profile.create'), new_profile_path, class: 'btn btn-outline-primary pull-xs-right' %>
             <% else %>
@@ -54,11 +54,11 @@
               <%= link_to t('application.new'), new_composition_path, class: 'btn btn-outline-primary pull-xs-right' %>
           <% end %>
       <% end %>
-
-      <div class="form-group">
-        <%= f.label :category_id %>
-        <%= f.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true}, class: 'form-control' %>
       </div>
+
+      <%= form_tag search_path, method: :get do%>
+        <%= text_field_tag :query, params[:query] %>
+      <%end%>
 
       <ul class="navbar-nav pull-xs-right">
         <% if user_signed_in? %>
