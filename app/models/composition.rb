@@ -3,7 +3,7 @@ class Composition < ApplicationRecord
   mount_uploader :image, ImageUploader
   searchkick
   has_many :comments, dependent: :destroy
-
+  has_one_attached :image
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   default_scope -> { order('created_at DESC') }

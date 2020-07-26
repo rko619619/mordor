@@ -47,7 +47,7 @@
         <% if current_user.ban == false %>
           <div class="form-inline my-2 my-lg-0">
             <% if current_user.profile == nil %>
-              <%= link_to t('profile.create'), new_profile_path, class: 'btn btn-outline-primary pull-xs-right' %>
+              <%= link_to t('profile.create'), new_profile_path, class: 'bi bi-file-person' %>
             <% else %>
               <%= link_to t('profile.view'), current_user.profile, class: 'btn btn-outline-primary pull-xs-right' %>
             <% end %>
