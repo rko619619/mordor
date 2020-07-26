@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     if @composition.update(post_params)
-      redirect_to @composition, info: t('admin.user.controller.user_update')
+      redirect_to @composition, success: t('admin.user.controller.user_update')
     else
       flash.now[:danger] = t('admin.user.controller.user_not_update')
       render :edit
