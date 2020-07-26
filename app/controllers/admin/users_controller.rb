@@ -24,7 +24,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, success: t("admin.user.controller.user_update")
+      redirect_to admin_users_path, success: t("admin.user.controller.user_update")
     else
       flash[:danger] = t('admin.categories.controller.user_not_update')
       render :edit

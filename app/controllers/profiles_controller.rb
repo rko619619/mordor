@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def update
       if @profile.update(profile_params)
-        redirect_to @profile, info: t('profile.controller.profile_update')
+        redirect_to @profile, success: t('profile.controller.profile_update')
       else
         flash.now[:danger] = t('profile.controller.profile_not_created')
         render :edit
