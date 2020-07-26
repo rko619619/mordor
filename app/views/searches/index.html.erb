@@ -1,9 +1,8 @@
-<h1><%= t('.title') %></h1>
-
-<section id='compositions'>
-  <%= render @compositions %>
-</section>
-
-
-
-<%= will_paginate @compositions, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>
+<h1><%= t('search.result') %></h1>
+<% if @compositions.present?  %>
+  <section id='compositions'>
+    <%= render @compositions %>
+  </section>
+<% else %>
+  <h1><%= t('search.result_no') %></h1>
+<% end %>

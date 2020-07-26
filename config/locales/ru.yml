@@ -14,6 +14,10 @@ ru:
     sure: 'Вы уверены?'
     my_posts: 'Мои статьи'
     no_posts: 'У вас еще нет постов :('
+  search:
+    search: 'Поиск'
+    result: 'Результаты поиска:'
+    result_no: 'ничего не найдено'
   will_paginate:
     previous_label: '&larr; Предыдущая'
     next_label: 'Следующая &rarr;'
