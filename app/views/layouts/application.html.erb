@@ -23,7 +23,6 @@
 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<%=compositions_path%>"><%= t('application.title') %><span class="sr-only">(current)</span></a>
         </li>
         <% if user_signed_in?%>
           <% if current_user.admin? %>
