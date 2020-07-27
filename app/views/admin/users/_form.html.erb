@@ -22,6 +22,9 @@
   <div class="form-group">
     <%= link_to t('common.back'), :back, class:'btn btn-outline-secondary'%>
     <%= f.submit t('application.create'), class:'btn btn-primary' %>
+    <%= link_to t('common.delete'), admin_user_path, method: :delete,
+                data: { confirm: "You sure?" }, class: 'btn btn-outline-danger' %>
   </div>
+
 <% end %>
 

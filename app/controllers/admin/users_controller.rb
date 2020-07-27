@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :set_users, only: [:edit, :update, :destroy]
+  before_action :set_users, only: [:edit, :update]
   before_action :authenticate_user!
   before_action :check_admin
   before_action :check_ban
@@ -18,6 +18,12 @@ class Admin::UsersController < ApplicationController
   def create
   end
 
+  def show
+    @users = User.all
+    @profiles = Profile.all
+    @compositions = Composition.all
+  end
+
   def edit
 
   end
@@ -33,13 +39,13 @@ class Admin::UsersController < ApplicationController
 
 
   def destroy
-    if @user.destroy
-      redirect_to @users
+    if User.find(params[:id]).destroy
+      flash[:success] = t("admin.user.controller.user_delete")
+      redirect_to admin_user_path
     else
-      flash[:danger] = t('admin.categories.controller.user_delete')
-      render :edit
+      flash[:danger] = t('admin.categories.controller.user_not_delete')
+      redirect_to admin_users_path
     end
-
   end
 
   private

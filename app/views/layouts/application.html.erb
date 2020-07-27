@@ -23,7 +23,6 @@
 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<%=compositions_path%>"><%= t('application.title') %><span class="sr-only">(current)</span></a>
         </li>
         <% if user_signed_in?%>
           <% if current_user.admin? %>
@@ -47,7 +46,7 @@
         <% if current_user.ban == false %>
           <div class="form-inline my-2 my-lg-0">
             <% if current_user.profile == nil %>
-              <%= link_to t('profile.create'), new_profile_path, class: 'bi bi-file-person' %>
+              <%= link_to t('profile.create'), new_profile_path, class: 'btn btn-outline-primary pull-xs-right' %>
             <% else %>
               <%= link_to t('profile.view'), current_user.profile, class: 'btn btn-outline-primary pull-xs-right' %>
             <% end %>
